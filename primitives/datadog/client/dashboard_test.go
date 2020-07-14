@@ -30,7 +30,7 @@ var exampleDashboardsRespose = `
         "email": "foo.bar@test.com",
         "icon": "https://secure.gravatar.com/avatar/123?s=48&d=retro"
       },
-      "modified": "2018-11-26T16:38:26.588374+00:00"
+      "modified_at": "2018-11-26T16:38:26.588374+00:00"
     },
     {
       "read_only": false,
@@ -50,7 +50,7 @@ var exampleDashboardsRespose = `
         "email": "foo.bar@test.com",
         "icon": "https://secure.gravatar.com/avatar/123?s=48&d=retro"
       },
-      "modified": "2018-11-21T20:22:57.201615+00:00"
+      "modified_at": "2018-11-21T20:22:57.201615+00:00"
     }
   ]
 }

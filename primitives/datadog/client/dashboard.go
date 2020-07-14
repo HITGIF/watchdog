@@ -21,7 +21,7 @@ func (dr DashboardsResponse) GetModifiedIDsWithin(interval time.Duration, fn fun
 	var resp struct {
 		Dashboards []struct {
 			ID       string `json:"id"`
-			Modified string `json:"modified"`
+			Modified string `json:"modified_at"`
 		}
 	}
 
@@ -33,12 +33,12 @@ func (dr DashboardsResponse) GetModifiedIDsWithin(interval time.Duration, fn fun
 	var ids []string
 	for _, d := range resp.Dashboards {
 		if d.Modified == "" {
-			return nil, fmt.Errorf("empty modified field, full response: %+v", resp)
+			return nil, fmt.Errorf("empty modified_at field, full response: %+v", resp)
 		}
 
 		t, err := time.Parse(time.RFC3339Nano, d.Modified)
 		if err != nil {
-			return nil, errors.Wrapf(err, "unable to parse modified field %s", d.Modified)
+			return nil, errors.Wrapf(err, "unable to parse modified_at field %s", d.Modified)
 		}
 
 		if fn(t) < interval {
