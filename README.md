@@ -35,13 +35,14 @@ How to setup Coinbase Watchdog from scratch
 ==================================
 
 - Create a github app, follow the [guide](https://developer.github.com/apps/building-your-first-github-app/) on github.com
-  - Give permission to read/write to Pull Requests
+  - Give permission to read/write to Pull Requests.
+  - Give permission to read-only Contents.
   - Generate a new RSA private key in github UI.
 - Generate an rsa-ssh key from github app private RSA key: `ssh-keygen -y -f <private.key>`
   - Add the generated public rsa-ssh key to github repo, where config and data will be stored
     under `Settings -> Deploy Keys`. Make sure to check `Allow write access`. This will grant Coinbase Watchdog
     permissions to push changes to remote branch and open PRs.
-    
+
 Coinbase Watchdog parameters
 ===================
 
@@ -67,7 +68,7 @@ System parameters:
   - `HTTP_SECRET`, `optional`, `unset` - Secret used to access HTTP endpoints. (Refer to design doc for more details)
   - `HTTP_PORT`, `optional`, default set to `"3000"` - Port to listen on
   - `SLACK_TOKEN`, `optional`, - Use slack token for notifications.
-  
+
 User parameters:
   - `USER_CONFIG_PATH`, `optional`, default set to `"/config"` - Prefix to base path with user configs.
   - `USER_CONFIG_GIT_URL`, `required` - URL to github repo with user configs.
