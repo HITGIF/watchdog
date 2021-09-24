@@ -24,7 +24,7 @@ meta:
     team: infra/sre
 
 dashboards:
-    - 954604
+    - abc-def-ghi
 
 monitors:
     - 6065878
