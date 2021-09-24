@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/google/go-github/github"
+	"github.com/google/go-github/v39/github"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 	"github.com/waigani/diffparser"

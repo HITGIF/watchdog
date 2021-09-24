@@ -10,9 +10,9 @@ import (
 	"github.com/coinbase/watchdog/controller/notify"
 	"github.com/coinbase/watchdog/primitives/datadog"
 
+	"github.com/go-playground/webhooks/v6/github"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
-	"gopkg.in/go-playground/webhooks.v5/github"
 )
 
 var (
@@ -197,7 +197,6 @@ func (c *Controller) restoreDatadogComponents(prNumber int, componentFiles []str
 		if err != nil {
 			return errors.Wrapf(err, "unable to read dashboard %s", file)
 		}
-
 		component := &datadog.Component{}
 		if err := json.Unmarshal(body, component); err != nil {
 			return errors.Wrapf(err, "unable to unmarshal to datadog component. File %s", file)

@@ -76,9 +76,7 @@ func TestClient_UpdateDashboard(t *testing.T) {
 
 	exampleDashboard := []byte(`
 {
-  "dashboard": {
     "id": "my-test-id"
-  }
 }
 `)
 

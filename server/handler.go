@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/go-playground/webhooks/v6/github"
 	"github.com/sirupsen/logrus"
-	"gopkg.in/go-playground/webhooks.v5/github"
 )
 
 func (r *Router) handlerGithubWebHook(w http.ResponseWriter, req *http.Request) {

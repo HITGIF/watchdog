@@ -3,8 +3,8 @@ package server
 import (
 	"github.com/coinbase/watchdog/controller"
 
+	"github.com/go-playground/webhooks/v6/github"
 	"github.com/pkg/errors"
-	"gopkg.in/go-playground/webhooks.v5/github"
 )
 
 // Option stands for functional parameter

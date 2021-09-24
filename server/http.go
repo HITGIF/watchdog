@@ -7,10 +7,10 @@ import (
 	"github.com/coinbase/watchdog/config"
 	"github.com/coinbase/watchdog/controller"
 
+	"github.com/go-playground/webhooks/v6/github"
 	"github.com/gorilla/mux"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
-	"gopkg.in/go-playground/webhooks.v5/github"
 )
 
 const (

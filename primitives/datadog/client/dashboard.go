@@ -61,20 +61,12 @@ func (c Client) GetDashboard(id string) (json.RawMessage, error) {
 
 // UpdateDashboard updates the dashboard from json raw message.
 func (c Client) UpdateDashboard(dash json.RawMessage) error {
-	dashboard := struct {
-		Dashboard json.RawMessage `json:"dashboard"`
-	}{}
-
-	err := json.Unmarshal(dash, &dashboard)
-	if err != nil {
-		return errors.Wrap(err, "unable to unmarshal dashboard, field dashboard")
-	}
 
 	content := struct {
 		ID string `json:"id"`
 	}{}
 
-	err = json.Unmarshal(dashboard.Dashboard, &content)
+	err := json.Unmarshal(dash, &content)
 	if err != nil {
 		return errors.Wrapf(err, "unable to unmarshal dashboard")
 	}
@@ -83,7 +75,7 @@ func (c Client) UpdateDashboard(dash json.RawMessage) error {
 		return ErrInvalidDashboard
 	}
 
-	_, err = c.do("PUT", fmt.Sprintf("%s/%s", dashboardType, content.ID), bytes.NewReader(dashboard.Dashboard))
+	_, err = c.do("PUT", fmt.Sprintf("%s/%s", dashboardType, content.ID), bytes.NewReader(dash))
 	if err != nil {
 		return err
 	}
