@@ -4,7 +4,7 @@ package client
 type Option func(c *Client) error
 
 // WithRemoveDashboardFields sets fields to be removed from a dashboard response.
-// Nested fields are supported via comma for example (dash.modified) will remove the modified field from
+// Nested fields are supported via comma for example (dashboard.modified_at) will remove the modified field from
 // a nested dict under "dash"
 // endpoint /api/v1/dash/<id>
 func WithRemoveDashboardFields(fields []string) Option {

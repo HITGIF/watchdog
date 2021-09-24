@@ -49,7 +49,7 @@ func main() {
 
 	// setup default fields to be remove from dashboard/monitor/screen board response.
 	clientOptions := []client.Option{
-		client.WithRemoveDashboardFields([]string{"dash.modified"}),
+		client.WithRemoveDashboardFields([]string{"modified_at"}),
 		client.WithRemoveMonitorFields([]string{"modified", "overall_state", "overall_state_modified"}, []string{"state"}),
 		client.WithRemoveScreenBoardFields([]string{"modified"}),
 	}
