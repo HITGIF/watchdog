@@ -1,9 +1,9 @@
 package git
 
 import (
+	"github.com/go-git/go-git/v5/plumbing/transport/ssh"
 	"github.com/pkg/errors"
 	ssh2 "golang.org/x/crypto/ssh"
-	"gopkg.in/src-d/go-git.v4/plumbing/transport/ssh"
 )
 
 // ErrUninitializedAuth is returned if the auth object was not set.

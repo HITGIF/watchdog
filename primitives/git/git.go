@@ -2,22 +2,29 @@ package git
 
 import (
 	"fmt"
+	"github.com/go-git/go-billy/v5"
+	"github.com/go-git/go-billy/v5/memfs"
+	"github.com/go-git/go-git/v5/config"
+	"github.com/go-git/go-git/v5/plumbing"
+	"github.com/go-git/go-git/v5/plumbing/object"
+	"github.com/go-git/go-git/v5/plumbing/transport"
+	"github.com/go-git/go-git/v5/storage"
+	"github.com/go-git/go-git/v5/storage/memory"
 	"io"
 	"io/ioutil"
 	"os"
 	"strings"
 	"time"
 
+	"github.com/go-git/go-git/v5"
 	"github.com/pkg/errors"
-	"gopkg.in/src-d/go-billy.v4"
-	"gopkg.in/src-d/go-billy.v4/memfs"
-	"gopkg.in/src-d/go-git.v4"
-	"gopkg.in/src-d/go-git.v4/config"
-	"gopkg.in/src-d/go-git.v4/plumbing"
-	"gopkg.in/src-d/go-git.v4/plumbing/object"
-	"gopkg.in/src-d/go-git.v4/plumbing/transport"
-	"gopkg.in/src-d/go-git.v4/storage"
-	"gopkg.in/src-d/go-git.v4/storage/memory"
+	//"gopkg.in/src-d/go-git.v4"
+	//"gopkg.in/src-d/go-git.v4/config"
+	//"gopkg.in/src-d/go-git.v4/plumbing"
+	//"gopkg.in/src-d/go-git.v4/plumbing/object"
+	//"gopkg.in/src-d/go-git.v4/plumbing/transport"
+	//"gopkg.in/src-d/go-git.v4/storage"
+	//"gopkg.in/src-d/go-git.v4/storage/memory"
 )
 
 var (
